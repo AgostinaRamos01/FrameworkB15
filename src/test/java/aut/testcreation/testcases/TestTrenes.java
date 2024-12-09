@@ -5,13 +5,12 @@ import framework.engine.selenium.DriverFactory;
 import framework.engine.selenium.SeleniumTestBase;
 import org.junit.jupiter.api.Test;
 
-public class RumboTest extends SeleniumTestBase {
-   //RumboHomePage rumboHomePage;
+public class TestTrenes extends SeleniumTestBase{
     TrenesPage trenesPage;
 
     @Test
     void IDCP001(){
-       // rumboHomePage = new RumboHomePage(DriverFactory.getDriver());
+        // rumboHomePage = new RumboHomePage(DriverFactory.getDriver());
         trenesPage    = new TrenesPage(DriverFactory.getDriver());
         trenesPage.navegarAlHome();
         trenesPage.buscarFormTrenes();
@@ -28,7 +27,7 @@ public class RumboTest extends SeleniumTestBase {
     }
     @Test
     void IDCP002(){
-      //  rumboHomePage = new RumboHomePage(DriverFactory.getDriver());
+        //  rumboHomePage = new RumboHomePage(DriverFactory.getDriver());
         trenesPage    = new TrenesPage(DriverFactory.getDriver());
         trenesPage.navegarAlHome();
         trenesPage.buscarFormTrenes();
@@ -42,7 +41,7 @@ public class RumboTest extends SeleniumTestBase {
     }
     @Test
     void IDCP003(){
-     //   rumboHomePage = new RumboHomePage(DriverFactory.getDriver());
+        //   rumboHomePage = new RumboHomePage(DriverFactory.getDriver());
         trenesPage    = new TrenesPage(DriverFactory.getDriver());
         trenesPage.navegarAlHome();
         trenesPage.buscarFormTrenes();
@@ -59,7 +58,7 @@ public class RumboTest extends SeleniumTestBase {
 
     @Test
     void IDCP004(){
-      //  rumboHomePage = new RumboHomePage(DriverFactory.getDriver());
+        //  rumboHomePage = new RumboHomePage(DriverFactory.getDriver());
         trenesPage    = new TrenesPage(DriverFactory.getDriver());
         trenesPage.navegarAlHome();
         trenesPage.buscarFormTrenes();
@@ -78,3 +77,4 @@ public class RumboTest extends SeleniumTestBase {
         trenesPage.scrollDownmiddle();
     }
 }
+

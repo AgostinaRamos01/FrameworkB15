@@ -1,16 +1,14 @@
 package aut.testcreation.pages;
 
-import framework.engine.selenium.SeleniumWrapper;
-import io.restassured.internal.common.assertion.Assertion;
+import framework.engine.selenium.SeleniumWrapperTrenes;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.junit.jupiter.api.Assertions;
 
 import static framework.engine.utils.Constants.BASE_URL_AUT;
 
-public class TrenesPage extends SeleniumWrapper {
+public class TrenesPage extends SeleniumWrapperTrenes {
     public TrenesPage(WebDriver driver) {super(driver);   }
 
     //localizadores

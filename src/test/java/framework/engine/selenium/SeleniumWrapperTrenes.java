@@ -1,21 +1,17 @@
 package framework.engine.selenium;
-
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-public class SeleniumWrapper {
-
+public class SeleniumWrapperTrenes {
     protected WebDriverWait wait;
 
     protected final WebDriver driver;
 
-
-
     //Constructor Base
-    public SeleniumWrapper(WebDriver driver){
+    public SeleniumWrapperTrenes(WebDriver driver){
         this.driver = driver;
     }
 
@@ -73,12 +69,12 @@ public class SeleniumWrapper {
     }
 
     //waits------------------------------------------------------------------------------------
-     public void esperarXSegundos(int milisegundos){
-      try {
-          Thread.sleep(milisegundos);
-      } catch (InterruptedException e) {
-          throw new RuntimeException(e);
-      }
+    public void esperarXSegundos(int milisegundos){
+        try {
+            Thread.sleep(milisegundos);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public WebElement esperaExplicita(By locator,int segundos){
@@ -131,3 +127,4 @@ public class SeleniumWrapper {
         js.executeScript("window.scrollBy(0, 0);"); //
     }
 }
+
