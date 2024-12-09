@@ -33,9 +33,11 @@ public class TrenesPage extends SeleniumWrapperTrenes {
     By selectAssist=By.xpath("//select[@class=\"form-control select-input\"]");
     By selectAssistMovility=By.xpath("(//option[@data-test=\"special-request-structured-types-option\"])[2]");
     By selectDelete=By.xpath("//button[@class=\"Link__StyledLink-sc-y3byev-0 hJcxKT Link__BaseLinkButton-sc-y3byev-1 gvrLHZ\"]");
-    By btnDetalles=By.xpath("//button[@class=\"Link__StyledLink-sc-y3byev-0 qajdq Link__BaseLinkButton-sc-y3byev-1 gvrLHZ sc-fYrVWQ ewNYBu\"]");
+    By btnDetalles=By.xpath("//button[@data-testid=\"details-link\"]");
     By filtrosDetalle= By.xpath("(//div[@class=\"JourneyDetailsWayIntro__WayIntroSmallText-sc-7wt6gl-3 bYZjhX\"])[1]");
-
+    By primerPrecioRes= By.xpath("(//span[@data-testid=\"transportcard-final-price\"])[1]");
+    By primerPrecioResDesglose=By.xpath("(//span[@class=\"PriceBreakdownTable__Price-cncr__sc-yprjfn-4 ldFhEl\"])[1]");
+    By btnDesglosePrecio=By.xpath("(//button[@class=\"PriceBreakdownDetailsFooter__PopoverInner-cncr__sc-7yob6i-2 cXpnYB\"])[1]");
 
     public void navegarAlHome(){
         navigateTo(BASE_URL_AUT);
@@ -130,6 +132,12 @@ public class TrenesPage extends SeleniumWrapperTrenes {
         click(esperaExplicita(btnDetalles,10));
         esperaExplicita(filtrosDetalle,60);
         Assertions.assertEquals(text,getText(filtrosDetalle));
+        esperarXSegundos(4000);
+    }
+    public void desglosePrecioIgual(){
+        driver.findElement(primerPrecioRes).getText();
+        click(esperaExplicita(btnDesglosePrecio,10));
+        Assertions.assertEquals(primerPrecioRes,(primerPrecioResDesglose));
         esperarXSegundos(4000);
     }
 }

@@ -106,7 +106,7 @@ public class TestTrenes extends SeleniumTestBase{
         trenesPage.campoDestino("Madrid");
         trenesPage.btnBuscar();
         trenesPage.clickResultadoBusqueda(); // metedo para acceder al primer resultado
-
+        trenesPage.desglosePrecioIgual();
     }
 }
 
