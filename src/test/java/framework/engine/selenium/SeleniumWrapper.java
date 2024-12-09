@@ -130,6 +130,4 @@ public class SeleniumWrapper {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0, 0);"); //
     }
-
-
 }
