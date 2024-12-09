@@ -76,5 +76,35 @@ public class TestTrenes extends SeleniumTestBase{
         trenesPage.campoDatosPersonales("Roberto","Quinteros");
         trenesPage.scrollDownmiddle();
     }
+
+    @Test
+    void IDCP005(){
+        //   rumboHomePage = new RumboHomePage(DriverFactory.getDriver());
+        trenesPage    = new TrenesPage(DriverFactory.getDriver());
+        trenesPage.navegarAlHome();
+        trenesPage.buscarFormTrenes();
+        trenesPage.verMas();
+        trenesPage.irPageTrenes();
+        trenesPage.campoOrigen("Burgos");
+        trenesPage.campoDestino("Madrid");
+        trenesPage.btnBuscar();
+        trenesPage.clickResultadoBusqueda(); // metedo para acceder al primer resultado
+
+    }
+
+    @Test
+    void IDCP006(){
+        //   rumboHomePage = new RumboHomePage(DriverFactory.getDriver());
+        trenesPage    = new TrenesPage(DriverFactory.getDriver());
+        trenesPage.navegarAlHome();
+        trenesPage.buscarFormTrenes();
+        trenesPage.verMas();
+        trenesPage.irPageTrenes();
+        trenesPage.campoOrigen("Burgos");
+        trenesPage.campoDestino("Madrid");
+        trenesPage.btnBuscar();
+        trenesPage.clickResultadoBusqueda(); // metedo para acceder al primer resultado
+
+    }
 }
 
