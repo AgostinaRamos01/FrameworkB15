@@ -10,7 +10,6 @@ public class TestTrenes extends SeleniumTestBase{
 
     @Test
     void IDCP001(){
-        // rumboHomePage = new RumboHomePage(DriverFactory.getDriver());
         trenesPage    = new TrenesPage(DriverFactory.getDriver());
         trenesPage.navegarAlHome();
         trenesPage.buscarFormTrenes();
@@ -27,7 +26,6 @@ public class TestTrenes extends SeleniumTestBase{
     }
     @Test
     void IDCP002(){
-        //  rumboHomePage = new RumboHomePage(DriverFactory.getDriver());
         trenesPage    = new TrenesPage(DriverFactory.getDriver());
         trenesPage.navegarAlHome();
         trenesPage.buscarFormTrenes();
@@ -41,7 +39,6 @@ public class TestTrenes extends SeleniumTestBase{
     }
     @Test
     void IDCP003(){
-        //   rumboHomePage = new RumboHomePage(DriverFactory.getDriver());
         trenesPage    = new TrenesPage(DriverFactory.getDriver());
         trenesPage.navegarAlHome();
         trenesPage.buscarFormTrenes();
@@ -58,7 +55,6 @@ public class TestTrenes extends SeleniumTestBase{
 
     @Test
     void IDCP004(){
-        //  rumboHomePage = new RumboHomePage(DriverFactory.getDriver());
         trenesPage    = new TrenesPage(DriverFactory.getDriver());
         trenesPage.navegarAlHome();
         trenesPage.buscarFormTrenes();
@@ -73,13 +69,12 @@ public class TestTrenes extends SeleniumTestBase{
         trenesPage.scrollDownmiddle();
         trenesPage.specialAssist2();
         trenesPage.scrollUp();
-        trenesPage.campoDatosPersonales("Roberto","Quinteros");
-        trenesPage.scrollDownmiddle();
+        trenesPage.campoDatosPersonalesDelete("Roberto","Quinteros");
+        trenesPage.textnombreassist("Roberto","Quinteros");
     }
 
     @Test
     void IDCP005(){
-        //   rumboHomePage = new RumboHomePage(DriverFactory.getDriver());
         trenesPage    = new TrenesPage(DriverFactory.getDriver());
         trenesPage.navegarAlHome();
         trenesPage.buscarFormTrenes();
@@ -96,7 +91,6 @@ public class TestTrenes extends SeleniumTestBase{
 
     @Test
     void IDCP006(){
-        //   rumboHomePage = new RumboHomePage(DriverFactory.getDriver());
         trenesPage    = new TrenesPage(DriverFactory.getDriver());
         trenesPage.navegarAlHome();
         trenesPage.buscarFormTrenes();

@@ -1,6 +1,7 @@
 package framework.engine.selenium;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
@@ -26,6 +27,13 @@ public class SeleniumWrapperTrenes {
 
     public String getText (By locator){
         return driver.findElement(locator).getText();
+    }
+    public String getFirstOption (By locator){
+        WebElement selectElement = driver.findElement(locator);
+        Select select = new Select(selectElement);    // Inicializa un objeto
+        WebElement selectedOption = select.getFirstSelectedOption();      // Obtén la opción actualmente seleccionada
+        System.out.println("Opción seleccionada: " + selectedOption.getText());   // Imprime el texto de la opción seleccionada
+        return selectedOption.getText();
     }
 
     public void write(String inputText, By locator){
