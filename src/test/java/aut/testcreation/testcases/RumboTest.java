@@ -30,7 +30,6 @@ public class RumboTest extends SeleniumTestBase {
         hotelesPage.btnBuscar();
         hotelesPage.irAHotel();
         alojamientoFrancia.alojamientoHotel();
-
     }
 
     @Test
@@ -92,7 +91,6 @@ public class RumboTest extends SeleniumTestBase {
         hotelesPage.completarFecha();
         hotelesPage.btnBuscar();
         alojamientoFrancia.filtros();
-
     }
 
     @Test
@@ -111,8 +109,5 @@ public class RumboTest extends SeleniumTestBase {
         alojamientoFrancia.eliminarFiltros();
 
     }
-
-
-
 
 }

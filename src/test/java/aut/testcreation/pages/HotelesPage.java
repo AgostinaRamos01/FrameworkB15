@@ -17,28 +17,21 @@ public class HotelesPage extends SeleniumWrapper {
     By bypersonas = By.xpath("//span[text()='Personas']");
     By agregarPersonas= By.xpath("//button[@aria-label='Aumentar el número de adultos']");
     By buscar = By.xpath("//form[@aria-label='Hoteles']//button[@aria-label='Buscar']");
-
     By hotel = By.xpath("//div[contains(text(), 'La Maison Du Coteau')]");
-    By byservicio = By.xpath("//span[contains(text(), 'Ver todos los servicios')]");
-    By byVerServicio = By.xpath("//a[contains(text(), 'Ver más')]");
-
     By byfechaSupIni = By.xpath("//div[@aria-labelledby='11-2024']//button[text()='13']");
     By byfechaSupSalida = By.xpath("//div[@aria-labelledby='0-2025']//button[text()='15']");
-    By byhotelMallorca = By.xpath("//div[text()='Iberostar Waves Cristina']");
-
-
+    By byhotelMallorca = By.xpath("//div[contains(text(), \"Apartamentos Martha's\")]");
 
     public HotelesPage(WebDriver driver) {
         super(driver);
     }
-
 
     public void completarAlojamiento(String alojamiento) {
         click(bytxtAlojamiento);
         esperarXSegundos(3000);
         write("Paris Orly", bytxtAlojamiento);
         esperarXSegundos(2000);
-        //  write(String.valueOf(Keys.RETURN),bytxtAlojamiento);
+
     }
     public void completarFecha(){
             WebElement calendario = esperaExplicita(fecha, 10);
@@ -60,7 +53,6 @@ public class HotelesPage extends SeleniumWrapper {
         WebElement personas = esperaExplicita(bypersonas, 10);
         Assertions.assertTrue(personas.isDisplayed(), "no disponible");
 
-       // click(bypersonas);
         esperarXSegundos(4000);
 
         WebElement agregar = esperaExplicita(agregarPersonas,10);

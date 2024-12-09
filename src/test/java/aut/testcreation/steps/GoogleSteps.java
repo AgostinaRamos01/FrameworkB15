@@ -9,7 +9,7 @@ public class GoogleSteps extends GoogleTestRunner implements En{
 
     public GoogleSteps(){
 
-        RumboHomePage googleHomePage;
+      //  RumboHomePage googleHomePage;
 
         Before(2, GoogleTestRunner::setUp);
         After(GoogleTestRunner::tearDown);

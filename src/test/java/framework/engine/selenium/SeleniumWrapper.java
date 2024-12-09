@@ -95,7 +95,6 @@ public class SeleniumWrapper {
         // Desplaza X( en este caso 1200) píxeles hacia abajo}
     }
 
-
     public void agregarTexto(WebElement elemento, String texto) {
         elemento.sendKeys(texto);
     }
@@ -104,14 +103,10 @@ public class SeleniumWrapper {
         this.driver.close();
     }
 
-
     public void maximizarBrowser() {
         this.driver.manage().window().maximize();
     }
-    public By buscarElementoWeb(By localizador) {
 
-        return (By) this.driver.findElement(localizador);
-    }
     public void esperarCargaCompleta() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
@@ -124,5 +119,4 @@ public class SeleniumWrapper {
             }
         }
     }
-
 }

@@ -3,9 +3,7 @@ package aut.testcreation.pages;
 import framework.engine.selenium.SeleniumWrapper;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 import java.util.Set;
 import java.util.concurrent.TimeUnit;

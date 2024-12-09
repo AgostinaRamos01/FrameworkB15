@@ -26,6 +26,7 @@ public class RumboHomePage extends SeleniumWrapper {
     public void aceptarCookie() {
         WebElement cookie = esperaExplicita(aceptarCookie, 10);
         Assertions.assertTrue(cookie.isDisplayed(), "no disponible");
+        esperarXSegundos(3000);
         click(aceptarCookie);
     }
 
