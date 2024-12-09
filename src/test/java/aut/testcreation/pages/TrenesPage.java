@@ -33,6 +33,8 @@ public class TrenesPage extends SeleniumWrapperTrenes {
     By selectAssist=By.xpath("//select[@class=\"form-control select-input\"]");
     By selectAssistMovility=By.xpath("(//option[@data-test=\"special-request-structured-types-option\"])[2]");
     By selectDelete=By.xpath("//button[@class=\"Link__StyledLink-sc-y3byev-0 hJcxKT Link__BaseLinkButton-sc-y3byev-1 gvrLHZ\"]");
+    By btnDetalles=By.xpath("//button[@class=\"Link__StyledLink-sc-y3byev-0 qajdq Link__BaseLinkButton-sc-y3byev-1 gvrLHZ sc-fYrVWQ ewNYBu\"]");
+    By filtrosDetalle= By.xpath("(//div[@class=\"JourneyDetailsWayIntro__WayIntroSmallText-sc-7wt6gl-3 bYZjhX\"])[1]");
 
 
     public void navegarAlHome(){
@@ -122,5 +124,12 @@ public class TrenesPage extends SeleniumWrapperTrenes {
         click(esperaExplicita(btnSpecialAssist,60));
         click(esperaExplicita(selectAssist,60));
         click(esperaExplicita(selectAssistMovility,60));
+    }
+
+    public void detallesFiltro(String text){
+        click(esperaExplicita(btnDetalles,10));
+        esperaExplicita(filtrosDetalle,60);
+        Assertions.assertEquals(text,getText(filtrosDetalle));
+        esperarXSegundos(4000);
     }
 }
