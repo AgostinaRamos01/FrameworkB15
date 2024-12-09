@@ -1,5 +1,4 @@
 package aut.testcreation.steps;
-import aut.testcreation.pages.RumboHomePage;
 import aut.testplan.sprint.GoogleTestRunner;
 import io.cucumber.java8.En;
 import org.junit.jupiter.api.Assertions;
@@ -9,8 +8,7 @@ public class GoogleSteps extends GoogleTestRunner implements En{
 
     public GoogleSteps(){
 
-        RumboHomePage googleHomePage;
-
+        //RumboHomePage googleHomePage;
         Before(2, GoogleTestRunner::setUp);
         After(GoogleTestRunner::tearDown);
 
