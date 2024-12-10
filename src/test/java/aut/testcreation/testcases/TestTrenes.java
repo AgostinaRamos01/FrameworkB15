@@ -12,7 +12,7 @@ public class TestTrenes extends SeleniumTestBase{
     void IDCP001(){
         trenesPage    = new TrenesPage(DriverFactory.getDriver());
         trenesPage.navegarAlHome();
-        trenesPage.buscarFormTrenes();
+        trenesPage.buscarFormTrenes2();
         trenesPage.verMas();
         trenesPage.irPageTrenes();
         trenesPage.campoOrigen("Burgos");
@@ -28,7 +28,7 @@ public class TestTrenes extends SeleniumTestBase{
     void IDCP002(){
         trenesPage    = new TrenesPage(DriverFactory.getDriver());
         trenesPage.navegarAlHome();
-        trenesPage.buscarFormTrenes();
+        trenesPage.buscarFormTrenes2();
         trenesPage.verMas();
         trenesPage.irPageTrenes();
         trenesPage.campoOrigen("A Coruña");
@@ -41,7 +41,7 @@ public class TestTrenes extends SeleniumTestBase{
     void IDCP003(){
         trenesPage    = new TrenesPage(DriverFactory.getDriver());
         trenesPage.navegarAlHome();
-        trenesPage.buscarFormTrenes();
+        trenesPage.buscarFormTrenes2();
         trenesPage.verMas();
         trenesPage.irPageTrenes();
         trenesPage.campoOrigen("Burgos");
@@ -57,7 +57,7 @@ public class TestTrenes extends SeleniumTestBase{
     void IDCP004(){
         trenesPage    = new TrenesPage(DriverFactory.getDriver());
         trenesPage.navegarAlHome();
-        trenesPage.buscarFormTrenes();
+        trenesPage.buscarFormTrenes2();
         trenesPage.verMas();
         trenesPage.irPageTrenes();
         trenesPage.campoOrigen("Burgos");
@@ -77,7 +77,7 @@ public class TestTrenes extends SeleniumTestBase{
     void IDCP005(){
         trenesPage    = new TrenesPage(DriverFactory.getDriver());
         trenesPage.navegarAlHome();
-        trenesPage.buscarFormTrenes();
+        trenesPage.buscarFormTrenes2();
         trenesPage.verMas();
         trenesPage.irPageTrenes();
         trenesPage.campoOrigen("Burgos");
@@ -93,7 +93,7 @@ public class TestTrenes extends SeleniumTestBase{
     void IDCP006(){
         trenesPage    = new TrenesPage(DriverFactory.getDriver());
         trenesPage.navegarAlHome();
-        trenesPage.buscarFormTrenes();
+        trenesPage.buscarFormTrenes2();
         trenesPage.verMas();
         trenesPage.irPageTrenes();
         trenesPage.campoOrigen("Burgos");

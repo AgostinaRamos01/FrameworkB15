@@ -3,6 +3,7 @@ package aut.testcreation.pages;
 import framework.engine.selenium.SeleniumWrapperTrenes;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.junit.jupiter.api.Assertions;
 
@@ -53,7 +54,17 @@ public class TrenesPage extends SeleniumWrapperTrenes {
     }
     public void irPageTrenes(){
         click(esperaExplicita(btnPageTrenes,60));
-        esperarXSegundos(3000);
+
+    }
+    public void buscarFormTrenes2() {
+        try {
+            // Intentamos encontrar y hacer clic en el botón
+           // click(esperaExplicita(btnPageTrenes, 60));
+            click(esperaExplicita(aceptarCookie,60));
+        } catch (NoSuchElementException e) {
+            // Si el botón no existe, no hacemos nada y pasamos al siguiente paso
+        }
+
     }
 
     public void campoOrigen(String origen){
