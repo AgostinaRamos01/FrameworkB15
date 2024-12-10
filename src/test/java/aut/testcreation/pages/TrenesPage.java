@@ -3,6 +3,7 @@ package aut.testcreation.pages;
 import framework.engine.selenium.SeleniumWrapperTrenes;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.junit.jupiter.api.Assertions;
 
@@ -29,11 +30,18 @@ public class TrenesPage extends SeleniumWrapperTrenes {
     By campoMes=By.xpath("(//span[@class=\"MenuItemstyles__Label-sc-fguzn7-1 eALBLu\"])[1]");
     By campoañoSolo=By.xpath("(//span[@class=\"FormFieldstyles__ValueWrapper-sc-1pt5zgp-4 bNeTrq\"])[8]");
     By campoAño2= By.xpath("(//input[@name=\"groups.1.travellers.1.dateOfBirth\"])[2]");
+    By cienAños=By.xpath("(//span[@data-testid=\"groups.1.travellers.1.dateOfBirth_error\"])[1]");
     By btnSpecialAssist= By.xpath("//button[@id=\"special-assistance-checkbox\"]");
     By selectAssist=By.xpath("//select[@class=\"form-control select-input\"]");
     By selectAssistMovility=By.xpath("(//option[@data-test=\"special-request-structured-types-option\"])[2]");
     By selectDelete=By.xpath("//button[@class=\"Link__StyledLink-sc-y3byev-0 hJcxKT Link__BaseLinkButton-sc-y3byev-1 gvrLHZ\"]");
-
+    By btnDetalles=By.xpath("//button[@data-testid=\"details-link\"]");
+    By filtrosDetalle= By.xpath("(//div[@class=\"JourneyDetailsWayIntro__WayIntroSmallText-sc-7wt6gl-3 bYZjhX\"])[1]");
+    By primerPrecioRes= By.xpath("(//span[@data-testid=\"transportcard-final-price\"])[1]");
+    By primerPrecioResDesglose=By.xpath("(//span[@class=\"PriceBreakdownTable__Price-cncr__sc-yprjfn-4 ldFhEl\"])[1]");
+    By btnDesglosePrecio=By.xpath("(//button[@class=\"PriceBreakdownDetailsFooter__PopoverInner-cncr__sc-7yob6i-2 cXpnYB\"])[1]");
+    By campoNombretest=By.xpath("(//span[@class=\"FormFieldstyles__ValueWrapper-sc-1pt5zgp-4 bNeTrq\"])[9]");
+    By selectAssistNombre=By.xpath("//span[@class=\"check\"]/following-sibling::div");
 
     public void navegarAlHome(){
         navigateTo(BASE_URL_AUT);
@@ -46,6 +54,17 @@ public class TrenesPage extends SeleniumWrapperTrenes {
     }
     public void irPageTrenes(){
         click(esperaExplicita(btnPageTrenes,60));
+
+    }
+    public void buscarFormTrenes2() {
+        try {
+            // Intentamos encontrar y hacer clic en el botón
+           // click(esperaExplicita(btnPageTrenes, 60));
+            click(esperaExplicita(aceptarCookie,60));
+        } catch (NoSuchElementException e) {
+            // Si el botón no existe, no hacemos nada y pasamos al siguiente paso
+        }
+
     }
 
     public void campoOrigen(String origen){
@@ -71,6 +90,16 @@ public class TrenesPage extends SeleniumWrapperTrenes {
         esperaExplicita(message2,60);
         Assertions.assertEquals(text,getText(message2));
     }
+    public void text100años(String text){
+        esperaExplicita(cienAños,60);
+        Assertions.assertEquals(text,getText(cienAños));
+    }
+    public void textnombreassist(String text, String text2){
+        click(esperaExplicita(campoApellido,60));
+        esperarXSegundos(1000);
+        esperaExplicita(selectAssistNombre,60);
+        Assertions.assertEquals(text+" "+text2,getText(selectAssistNombre));
+    }
 
 
     public void clickResultadoBusqueda(){
@@ -88,11 +117,18 @@ public class TrenesPage extends SeleniumWrapperTrenes {
     }
 
 
-    public void campoDatosPersonalesDelete(){
+    public void campoDatosPersonalesDelete(String nombre,String apellido){
         click(esperaExplicita(campoNombre,60));
-        sendKeys(Keys.DELETE,campoNombre);
+        for (int i=0;i<10;i++){
+            sendKeys(Keys.BACK_SPACE,campoNombre);
+        }
+        write(nombre,campoNombre);
         click(esperaExplicita(campoApellido,60));
-        sendKeys(Keys.DELETE,campoApellido);
+        for (int i=0;i<10;i++){
+            sendKeys(Keys.BACK_SPACE,campoApellido);
+        }
+        write(apellido,campoApellido);
+        click(esperaExplicita(selectAssist,60));
     }
 
     public void rellenarFechaNac(){
@@ -103,6 +139,8 @@ public class TrenesPage extends SeleniumWrapperTrenes {
         click(esperaExplicita(campoMes,60));
         click(esperaExplicita(campoañoSolo,60));
         write("1873",campoAño2);
+        click(esperaExplicita(campoNombretest,60));
+        text100años("¡Tienes más de 100 años!");
         esperarXSegundos(5000);
 
     }
@@ -116,11 +154,27 @@ public class TrenesPage extends SeleniumWrapperTrenes {
         click(esperaExplicita(btnSpecialAssist,60));
         click(esperaExplicita(selectAssist,60));
         click(esperaExplicita(selectAssistMovility,60));
+        Assertions.assertEquals("Movilidad reducidad",getFirstOption(selectAssist));
         click(esperaExplicita(selectDelete,60));
+        Assertions.assertEquals("Selecciona tipo de solicitud",getFirstOption(selectAssist));
     }
+
     public void specialAssist2(){
         click(esperaExplicita(btnSpecialAssist,60));
         click(esperaExplicita(selectAssist,60));
         click(esperaExplicita(selectAssistMovility,60));
+    }
+
+    public void detallesFiltro(String text){
+        click(esperaExplicita(btnDetalles,10));
+        esperaExplicita(filtrosDetalle,60);
+        Assertions.assertEquals(text,getText(filtrosDetalle));
+        esperarXSegundos(4000);
+    }
+    public void desglosePrecioIgual(){
+        driver.findElement(primerPrecioRes).getText();
+        click(esperaExplicita(btnDesglosePrecio,10));
+        Assertions.assertTrue(getText(primerPrecioResDesglose).contains(getText(primerPrecioRes)));
+        esperarXSegundos(4000);
     }
 }

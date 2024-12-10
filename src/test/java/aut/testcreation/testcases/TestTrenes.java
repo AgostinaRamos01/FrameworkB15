@@ -10,10 +10,9 @@ public class TestTrenes extends SeleniumTestBase{
 
     @Test
     void IDCP001(){
-        // rumboHomePage = new RumboHomePage(DriverFactory.getDriver());
         trenesPage    = new TrenesPage(DriverFactory.getDriver());
         trenesPage.navegarAlHome();
-        trenesPage.buscarFormTrenes();
+        trenesPage.buscarFormTrenes2();
         trenesPage.verMas();
         trenesPage.irPageTrenes();
         trenesPage.campoOrigen("Burgos");
@@ -27,10 +26,9 @@ public class TestTrenes extends SeleniumTestBase{
     }
     @Test
     void IDCP002(){
-        //  rumboHomePage = new RumboHomePage(DriverFactory.getDriver());
         trenesPage    = new TrenesPage(DriverFactory.getDriver());
         trenesPage.navegarAlHome();
-        trenesPage.buscarFormTrenes();
+        trenesPage.buscarFormTrenes2();
         trenesPage.verMas();
         trenesPage.irPageTrenes();
         trenesPage.campoOrigen("A Coruña");
@@ -41,10 +39,9 @@ public class TestTrenes extends SeleniumTestBase{
     }
     @Test
     void IDCP003(){
-        //   rumboHomePage = new RumboHomePage(DriverFactory.getDriver());
         trenesPage    = new TrenesPage(DriverFactory.getDriver());
         trenesPage.navegarAlHome();
-        trenesPage.buscarFormTrenes();
+        trenesPage.buscarFormTrenes2();
         trenesPage.verMas();
         trenesPage.irPageTrenes();
         trenesPage.campoOrigen("Burgos");
@@ -58,10 +55,9 @@ public class TestTrenes extends SeleniumTestBase{
 
     @Test
     void IDCP004(){
-        //  rumboHomePage = new RumboHomePage(DriverFactory.getDriver());
         trenesPage    = new TrenesPage(DriverFactory.getDriver());
         trenesPage.navegarAlHome();
-        trenesPage.buscarFormTrenes();
+        trenesPage.buscarFormTrenes2();
         trenesPage.verMas();
         trenesPage.irPageTrenes();
         trenesPage.campoOrigen("Burgos");
@@ -73,38 +69,38 @@ public class TestTrenes extends SeleniumTestBase{
         trenesPage.scrollDownmiddle();
         trenesPage.specialAssist2();
         trenesPage.scrollUp();
-        trenesPage.campoDatosPersonales("Roberto","Quinteros");
-        trenesPage.scrollDownmiddle();
+        trenesPage.campoDatosPersonalesDelete("Roberto","Quinteros");
+        trenesPage.textnombreassist("Roberto","Quinteros");
     }
 
     @Test
     void IDCP005(){
-        //   rumboHomePage = new RumboHomePage(DriverFactory.getDriver());
         trenesPage    = new TrenesPage(DriverFactory.getDriver());
         trenesPage.navegarAlHome();
-        trenesPage.buscarFormTrenes();
+        trenesPage.buscarFormTrenes2();
         trenesPage.verMas();
         trenesPage.irPageTrenes();
         trenesPage.campoOrigen("Burgos");
         trenesPage.campoDestino("Madrid");
         trenesPage.btnBuscar();
         trenesPage.clickResultadoBusqueda(); // metedo para acceder al primer resultado
+        trenesPage.clickBtnSelect();
+        trenesPage.detallesFiltro("Burgos - Madrid");
 
     }
 
     @Test
     void IDCP006(){
-        //   rumboHomePage = new RumboHomePage(DriverFactory.getDriver());
         trenesPage    = new TrenesPage(DriverFactory.getDriver());
         trenesPage.navegarAlHome();
-        trenesPage.buscarFormTrenes();
+        trenesPage.buscarFormTrenes2();
         trenesPage.verMas();
         trenesPage.irPageTrenes();
         trenesPage.campoOrigen("Burgos");
         trenesPage.campoDestino("Madrid");
         trenesPage.btnBuscar();
         trenesPage.clickResultadoBusqueda(); // metedo para acceder al primer resultado
-
+        trenesPage.desglosePrecioIgual();
     }
 }
 
