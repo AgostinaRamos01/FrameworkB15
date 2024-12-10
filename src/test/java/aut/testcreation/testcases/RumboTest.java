@@ -3,7 +3,7 @@ package aut.testcreation.testcases;
 import aut.testcreation.pages.AlojamientosFrancia;
 import aut.testcreation.pages.HotelesPage;
 import aut.testcreation.pages.RumboHomePage;
-import cucumber.api.java.ja.但し;
+import aut.testcreation.pages.VuelosPage;
 import framework.engine.selenium.DriverFactory;
 import framework.engine.selenium.SeleniumTestBase;
 import org.junit.jupiter.api.Test;
@@ -13,6 +13,8 @@ public class RumboTest extends SeleniumTestBase {
     RumboHomePage rumboHomePage;
     HotelesPage hotelesPage;
     AlojamientosFrancia alojamientoFrancia;
+    VuelosPage vuelosPage;
+
 
 
     @Test
@@ -107,7 +109,19 @@ public class RumboTest extends SeleniumTestBase {
         hotelesPage.btnBuscar();
         alojamientoFrancia.filtros();
         alojamientoFrancia.eliminarFiltros();
-
     }
+
+   @Test
+    public void vuelosBaratos () {
+       rumboHomePage = new RumboHomePage(DriverFactory.getDriver());
+       vuelosPage = new VuelosPage(DriverFactory.getDriver());
+       rumboHomePage.navegarAlHome();
+       rumboHomePage.esperarXSegundos(4000);
+       rumboHomePage.aceptarCookie();
+       rumboHomePage.formVuelos();
+       vuelosPage.vuelosBaratos();
+   }
+
+
 
 }
